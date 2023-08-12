@@ -1,5 +1,7 @@
-﻿using Volo.Abp.Account;
+﻿using Cb.Samples.ModulesEntitySync.CustomerSync;
+using Volo.Abp.Account;
 using Volo.Abp.AutoMapper;
+using Volo.Abp.Domain.Entities.Events.Distributed;
 using Volo.Abp.FeatureManagement;
 using Volo.Abp.Identity;
 using Volo.Abp.Modularity;
@@ -30,6 +32,15 @@ public class ModulesEntitySyncApplicationModule : AbpModule
         Configure<AbpAutoMapperOptions>(options =>
         {
             options.AddMaps<ModulesEntitySyncApplicationModule>();
+        });
+
+        Configure<AbpDistributedEntityEventOptions>(options =>
+        {
+            options.AutoEventSelectors.Add<CustomerManagement.Customers.Customer>();
+            options.EtoMappings.Add<CustomerManagement.Customers.Customer, CmCustomerEto>();
+
+            options.AutoEventSelectors.Add<ProjectManagement.Customers.Customer>();
+            options.EtoMappings.Add<ProjectManagement.Customers.Customer, PmCustomerEto>();
         });
     }
 }
