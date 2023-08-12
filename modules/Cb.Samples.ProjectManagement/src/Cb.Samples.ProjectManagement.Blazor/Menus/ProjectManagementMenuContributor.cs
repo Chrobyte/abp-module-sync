@@ -26,7 +26,7 @@ public class ProjectManagementMenuContributor : IMenuContributor
 
         menuItem.AddItem(new(
             name: ProjectManagementMenus.Customers,
-            displayName: "Customers",
+            displayName: "PM Customers",
             url: "~/sample-pm/customers",
             order: 2));
 

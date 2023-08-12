@@ -20,7 +20,7 @@ public class CustomerManagementMenuContributor : IMenuContributor
 
         menuItem.AddItem(new(
             name: CustomerManagementMenus.Customers,
-            displayName: "Customers",
+            displayName: "CM Customers",
             url: "~/sample-cm/customers",
             order: 1));
 
