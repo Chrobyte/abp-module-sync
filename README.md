@@ -16,3 +16,4 @@ abp new Cb.Samples.CustomerManagement -t module -csf
 ```sh
 abp new Cb.Samples.ModulesEntitySync8 -t app -u blazor-server -dbms SqlServer
 ```
+> As this is just a sample we have decided to only implement for blazor ui and ef core
