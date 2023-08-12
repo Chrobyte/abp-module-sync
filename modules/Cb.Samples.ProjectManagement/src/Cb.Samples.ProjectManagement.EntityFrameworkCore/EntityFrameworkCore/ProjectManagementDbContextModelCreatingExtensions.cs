@@ -1,5 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Cb.Samples.ProjectManagement.Customers;
+using Cb.Samples.ProjectManagement.Projects;
+using Microsoft.EntityFrameworkCore;
 using Volo.Abp;
+using Volo.Abp.EntityFrameworkCore.Modeling;
 
 namespace Cb.Samples.ProjectManagement.EntityFrameworkCore;
 
@@ -10,24 +13,26 @@ public static class ProjectManagementDbContextModelCreatingExtensions
     {
         Check.NotNull(builder, nameof(builder));
 
-        /* Configure all entities here. Example:
-
-        builder.Entity<Question>(b =>
+        builder.Entity<Customer>(b =>
         {
             //Configure table & schema name
-            b.ToTable(ProjectManagementDbProperties.DbTablePrefix + "Questions", ProjectManagementDbProperties.DbSchema);
+            b.ToTable(ProjectManagementDbProperties.DbTablePrefix + "Customers", ProjectManagementDbProperties.DbSchema);
+
+            b.ConfigureByConvention();
+        });
+
+        builder.Entity<Project>(b =>
+        {
+            //Configure table & schema name
+            b.ToTable(ProjectManagementDbProperties.DbTablePrefix + "Projects", ProjectManagementDbProperties.DbSchema);
 
             b.ConfigureByConvention();
 
-            //Properties
-            b.Property(q => q.Title).IsRequired().HasMaxLength(QuestionConsts.MaxTitleLength);
-
-            //Relations
-            b.HasMany(question => question.Tags).WithOne().HasForeignKey(qt => qt.QuestionId);
-
-            //Indexes
-            b.HasIndex(q => q.CreationTime);
+            b.HasOne<Customer>()
+                .WithMany()
+                .HasForeignKey(p => p.CustomerId)
+                .IsRequired(false)
+                .OnDelete(DeleteBehavior.Restrict);
         });
-        */
     }
 }

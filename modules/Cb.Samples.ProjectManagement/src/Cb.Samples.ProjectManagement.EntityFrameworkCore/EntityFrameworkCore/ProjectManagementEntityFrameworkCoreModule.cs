@@ -1,4 +1,8 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Cb.Samples.ProjectManagement.Customers;
+using Cb.Samples.ProjectManagement.Projects;
+using Microsoft.Extensions.DependencyInjection;
+using System;
+using Volo.Abp.Domain.Repositories.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore;
 using Volo.Abp.Modularity;
 
@@ -14,9 +18,8 @@ public class ProjectManagementEntityFrameworkCoreModule : AbpModule
     {
         context.Services.AddAbpDbContext<ProjectManagementDbContext>(options =>
         {
-                /* Add custom repositories here. Example:
-                 * options.AddRepository<Question, EfCoreQuestionRepository>();
-                 */
+            options.AddRepository<Project, EfCoreRepository<IProjectManagementDbContext, Project, Guid>>();
+            options.AddRepository<Customer, EfCoreRepository<IProjectManagementDbContext, Customer, Guid>>();
         });
     }
 }
