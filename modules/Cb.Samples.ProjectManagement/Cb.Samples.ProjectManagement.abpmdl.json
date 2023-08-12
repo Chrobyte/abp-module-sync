@@ -1,0 +1,111 @@
+{
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {},
+      "host": {}
+    }
+  },
+  "packages": {
+    "Cb.Samples.ProjectManagement.Domain.Shared": {
+      "path": "src/Cb.Samples.ProjectManagement.Domain.Shared/Cb.Samples.ProjectManagement.Domain.Shared.abppkg.json",
+      "folder": "src"
+    },
+    "Cb.Samples.ProjectManagement.Domain": {
+      "path": "src/Cb.Samples.ProjectManagement.Domain/Cb.Samples.ProjectManagement.Domain.abppkg.json",
+      "folder": "src"
+    },
+    "Cb.Samples.ProjectManagement.Application.Contracts": {
+      "path": "src/Cb.Samples.ProjectManagement.Application.Contracts/Cb.Samples.ProjectManagement.Application.Contracts.abppkg.json",
+      "folder": "src"
+    },
+    "Cb.Samples.ProjectManagement.Application": {
+      "path": "src/Cb.Samples.ProjectManagement.Application/Cb.Samples.ProjectManagement.Application.abppkg.json",
+      "folder": "src"
+    },
+    "Cb.Samples.ProjectManagement.EntityFrameworkCore": {
+      "path": "src/Cb.Samples.ProjectManagement.EntityFrameworkCore/Cb.Samples.ProjectManagement.EntityFrameworkCore.abppkg.json",
+      "folder": "src"
+    },
+    "Cb.Samples.ProjectManagement.MongoDB": {
+      "path": "src/Cb.Samples.ProjectManagement.MongoDB/Cb.Samples.ProjectManagement.MongoDB.abppkg.json",
+      "folder": "src"
+    },
+    "Cb.Samples.ProjectManagement.HttpApi": {
+      "path": "src/Cb.Samples.ProjectManagement.HttpApi/Cb.Samples.ProjectManagement.HttpApi.abppkg.json",
+      "folder": "src"
+    },
+    "Cb.Samples.ProjectManagement.HttpApi.Client": {
+      "path": "src/Cb.Samples.ProjectManagement.HttpApi.Client/Cb.Samples.ProjectManagement.HttpApi.Client.abppkg.json",
+      "folder": "src"
+    },
+    "Cb.Samples.ProjectManagement.TestBase": {
+      "path": "test/Cb.Samples.ProjectManagement.TestBase/Cb.Samples.ProjectManagement.TestBase.abppkg.json",
+      "folder": "test"
+    },
+    "Cb.Samples.ProjectManagement.EntityFrameworkCore.Tests": {
+      "path": "test/Cb.Samples.ProjectManagement.EntityFrameworkCore.Tests/Cb.Samples.ProjectManagement.EntityFrameworkCore.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "Cb.Samples.ProjectManagement.MongoDB.Tests": {
+      "path": "test/Cb.Samples.ProjectManagement.MongoDB.Tests/Cb.Samples.ProjectManagement.MongoDB.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "Cb.Samples.ProjectManagement.Domain.Tests": {
+      "path": "test/Cb.Samples.ProjectManagement.Domain.Tests/Cb.Samples.ProjectManagement.Domain.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "Cb.Samples.ProjectManagement.Application.Tests": {
+      "path": "test/Cb.Samples.ProjectManagement.Application.Tests/Cb.Samples.ProjectManagement.Application.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "Cb.Samples.ProjectManagement.HttpApi.Host": {
+      "path": "host/Cb.Samples.ProjectManagement.HttpApi.Host/Cb.Samples.ProjectManagement.HttpApi.Host.abppkg.json",
+      "folder": "host"
+    },
+    "Cb.Samples.ProjectManagement.Web": {
+      "path": "src/Cb.Samples.ProjectManagement.Web/Cb.Samples.ProjectManagement.Web.abppkg.json",
+      "folder": "src"
+    },
+    "Cb.Samples.ProjectManagement.HttpApi.Client.ConsoleTestApp": {
+      "path": "test/Cb.Samples.ProjectManagement.HttpApi.Client.ConsoleTestApp/Cb.Samples.ProjectManagement.HttpApi.Client.ConsoleTestApp.abppkg.json",
+      "folder": "test"
+    },
+    "Cb.Samples.ProjectManagement.Web.Host": {
+      "path": "host/Cb.Samples.ProjectManagement.Web.Host/Cb.Samples.ProjectManagement.Web.Host.abppkg.json",
+      "folder": "host"
+    },
+    "Cb.Samples.ProjectManagement.AuthServer": {
+      "path": "host/Cb.Samples.ProjectManagement.AuthServer/Cb.Samples.ProjectManagement.AuthServer.abppkg.json",
+      "folder": "host"
+    },
+    "Cb.Samples.ProjectManagement.Host.Shared": {
+      "path": "host/Cb.Samples.ProjectManagement.Host.Shared/Cb.Samples.ProjectManagement.Host.Shared.abppkg.json",
+      "folder": "host"
+    },
+    "Cb.Samples.ProjectManagement.Web.Unified": {
+      "path": "host/Cb.Samples.ProjectManagement.Web.Unified/Cb.Samples.ProjectManagement.Web.Unified.abppkg.json",
+      "folder": "host"
+    },
+    "Cb.Samples.ProjectManagement.Blazor": {
+      "path": "src/Cb.Samples.ProjectManagement.Blazor/Cb.Samples.ProjectManagement.Blazor.abppkg.json",
+      "folder": "src"
+    },
+    "Cb.Samples.ProjectManagement.Blazor.Host": {
+      "path": "host/Cb.Samples.ProjectManagement.Blazor.Host/Cb.Samples.ProjectManagement.Blazor.Host.abppkg.json",
+      "folder": "host"
+    },
+    "Cb.Samples.ProjectManagement.Blazor.Server": {
+      "path": "src/Cb.Samples.ProjectManagement.Blazor.Server/Cb.Samples.ProjectManagement.Blazor.Server.abppkg.json",
+      "folder": "src"
+    },
+    "Cb.Samples.ProjectManagement.Blazor.WebAssembly": {
+      "path": "src/Cb.Samples.ProjectManagement.Blazor.WebAssembly/Cb.Samples.ProjectManagement.Blazor.WebAssembly.abppkg.json",
+      "folder": "src"
+    },
+    "Cb.Samples.ProjectManagement.Blazor.Server.Host": {
+      "path": "host/Cb.Samples.ProjectManagement.Blazor.Server.Host/Cb.Samples.ProjectManagement.Blazor.Server.Host.abppkg.json",
+      "folder": "host"
+    }
+  }
+}

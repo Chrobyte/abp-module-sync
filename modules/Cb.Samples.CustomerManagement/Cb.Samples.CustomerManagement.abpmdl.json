@@ -1,0 +1,111 @@
+{
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {},
+      "host": {}
+    }
+  },
+  "packages": {
+    "Cb.Samples.CustomerManagement.Domain.Shared": {
+      "path": "src/Cb.Samples.CustomerManagement.Domain.Shared/Cb.Samples.CustomerManagement.Domain.Shared.abppkg.json",
+      "folder": "src"
+    },
+    "Cb.Samples.CustomerManagement.Domain": {
+      "path": "src/Cb.Samples.CustomerManagement.Domain/Cb.Samples.CustomerManagement.Domain.abppkg.json",
+      "folder": "src"
+    },
+    "Cb.Samples.CustomerManagement.Application.Contracts": {
+      "path": "src/Cb.Samples.CustomerManagement.Application.Contracts/Cb.Samples.CustomerManagement.Application.Contracts.abppkg.json",
+      "folder": "src"
+    },
+    "Cb.Samples.CustomerManagement.Application": {
+      "path": "src/Cb.Samples.CustomerManagement.Application/Cb.Samples.CustomerManagement.Application.abppkg.json",
+      "folder": "src"
+    },
+    "Cb.Samples.CustomerManagement.EntityFrameworkCore": {
+      "path": "src/Cb.Samples.CustomerManagement.EntityFrameworkCore/Cb.Samples.CustomerManagement.EntityFrameworkCore.abppkg.json",
+      "folder": "src"
+    },
+    "Cb.Samples.CustomerManagement.MongoDB": {
+      "path": "src/Cb.Samples.CustomerManagement.MongoDB/Cb.Samples.CustomerManagement.MongoDB.abppkg.json",
+      "folder": "src"
+    },
+    "Cb.Samples.CustomerManagement.HttpApi": {
+      "path": "src/Cb.Samples.CustomerManagement.HttpApi/Cb.Samples.CustomerManagement.HttpApi.abppkg.json",
+      "folder": "src"
+    },
+    "Cb.Samples.CustomerManagement.HttpApi.Client": {
+      "path": "src/Cb.Samples.CustomerManagement.HttpApi.Client/Cb.Samples.CustomerManagement.HttpApi.Client.abppkg.json",
+      "folder": "src"
+    },
+    "Cb.Samples.CustomerManagement.TestBase": {
+      "path": "test/Cb.Samples.CustomerManagement.TestBase/Cb.Samples.CustomerManagement.TestBase.abppkg.json",
+      "folder": "test"
+    },
+    "Cb.Samples.CustomerManagement.EntityFrameworkCore.Tests": {
+      "path": "test/Cb.Samples.CustomerManagement.EntityFrameworkCore.Tests/Cb.Samples.CustomerManagement.EntityFrameworkCore.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "Cb.Samples.CustomerManagement.MongoDB.Tests": {
+      "path": "test/Cb.Samples.CustomerManagement.MongoDB.Tests/Cb.Samples.CustomerManagement.MongoDB.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "Cb.Samples.CustomerManagement.Domain.Tests": {
+      "path": "test/Cb.Samples.CustomerManagement.Domain.Tests/Cb.Samples.CustomerManagement.Domain.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "Cb.Samples.CustomerManagement.Application.Tests": {
+      "path": "test/Cb.Samples.CustomerManagement.Application.Tests/Cb.Samples.CustomerManagement.Application.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "Cb.Samples.CustomerManagement.HttpApi.Host": {
+      "path": "host/Cb.Samples.CustomerManagement.HttpApi.Host/Cb.Samples.CustomerManagement.HttpApi.Host.abppkg.json",
+      "folder": "host"
+    },
+    "Cb.Samples.CustomerManagement.Web": {
+      "path": "src/Cb.Samples.CustomerManagement.Web/Cb.Samples.CustomerManagement.Web.abppkg.json",
+      "folder": "src"
+    },
+    "Cb.Samples.CustomerManagement.HttpApi.Client.ConsoleTestApp": {
+      "path": "test/Cb.Samples.CustomerManagement.HttpApi.Client.ConsoleTestApp/Cb.Samples.CustomerManagement.HttpApi.Client.ConsoleTestApp.abppkg.json",
+      "folder": "test"
+    },
+    "Cb.Samples.CustomerManagement.Web.Host": {
+      "path": "host/Cb.Samples.CustomerManagement.Web.Host/Cb.Samples.CustomerManagement.Web.Host.abppkg.json",
+      "folder": "host"
+    },
+    "Cb.Samples.CustomerManagement.AuthServer": {
+      "path": "host/Cb.Samples.CustomerManagement.AuthServer/Cb.Samples.CustomerManagement.AuthServer.abppkg.json",
+      "folder": "host"
+    },
+    "Cb.Samples.CustomerManagement.Host.Shared": {
+      "path": "host/Cb.Samples.CustomerManagement.Host.Shared/Cb.Samples.CustomerManagement.Host.Shared.abppkg.json",
+      "folder": "host"
+    },
+    "Cb.Samples.CustomerManagement.Web.Unified": {
+      "path": "host/Cb.Samples.CustomerManagement.Web.Unified/Cb.Samples.CustomerManagement.Web.Unified.abppkg.json",
+      "folder": "host"
+    },
+    "Cb.Samples.CustomerManagement.Blazor": {
+      "path": "src/Cb.Samples.CustomerManagement.Blazor/Cb.Samples.CustomerManagement.Blazor.abppkg.json",
+      "folder": "src"
+    },
+    "Cb.Samples.CustomerManagement.Blazor.Host": {
+      "path": "host/Cb.Samples.CustomerManagement.Blazor.Host/Cb.Samples.CustomerManagement.Blazor.Host.abppkg.json",
+      "folder": "host"
+    },
+    "Cb.Samples.CustomerManagement.Blazor.Server": {
+      "path": "src/Cb.Samples.CustomerManagement.Blazor.Server/Cb.Samples.CustomerManagement.Blazor.Server.abppkg.json",
+      "folder": "src"
+    },
+    "Cb.Samples.CustomerManagement.Blazor.WebAssembly": {
+      "path": "src/Cb.Samples.CustomerManagement.Blazor.WebAssembly/Cb.Samples.CustomerManagement.Blazor.WebAssembly.abppkg.json",
+      "folder": "src"
+    },
+    "Cb.Samples.CustomerManagement.Blazor.Server.Host": {
+      "path": "host/Cb.Samples.CustomerManagement.Blazor.Server.Host/Cb.Samples.CustomerManagement.Blazor.Server.Host.abppkg.json",
+      "folder": "host"
+    }
+  }
+}

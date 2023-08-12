@@ -1,0 +1,7 @@
+{
+  "modules": {
+    "Cb.Samples.CustomerManagement": {
+      "path": "Cb.Samples.CustomerManagement.abpmdl.json"
+    }
+  }
+}

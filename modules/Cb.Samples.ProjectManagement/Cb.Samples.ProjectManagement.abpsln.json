@@ -1,0 +1,7 @@
+{
+  "modules": {
+    "Cb.Samples.ProjectManagement": {
+      "path": "Cb.Samples.ProjectManagement.abpmdl.json"
+    }
+  }
+}

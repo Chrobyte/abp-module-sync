@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.prod.json",
+  "compilerOptions": {
+    "paths": {
+      "@cb.Samples/customer-management": [
+        "projects/customer-management/src/public-api.ts"
+      ],
+      "@cb.Samples/customer-management/config": [
+        "projects/customer-management/config/src/public-api.ts"
+      ],
+      "@proxy": ["projects/customer-management/src/lib/proxy/index.ts"],
+      "@proxy/*": ["projects/customer-management/src/lib/proxy/*"]
+    }
+  }
+}
