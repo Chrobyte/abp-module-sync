@@ -29,6 +29,12 @@ public class CmCustomerSynchronizer : EntitySynchronizer<ProjectManagement.Custo
         return Repository.FindAsync(x => x.Name == eto.Name);
     }
 
+    /// <summary>
+    /// Make sure to override this to something meaningful so we do not land in an infinite loop of updates
+    /// </summary>
+    /// <param name="eto"></param>
+    /// <param name="localEntity"></param>
+    /// <returns></returns>
     protected override Task<bool> IsEtoNewerAsync(CmCustomerEto eto, ProjectManagement.Customers.Customer localEntity)
     {
         return Task.FromResult(localEntity == null || eto.Name != localEntity.Name);
