@@ -18,7 +18,7 @@ public class ProjectManagementApplicationModule : AbpModule
         context.Services.AddAutoMapperObjectMapper<ProjectManagementApplicationModule>();
         Configure<AbpAutoMapperOptions>(options =>
         {
-            options.AddMaps<ProjectManagementApplicationModule>(validate: true);
+            options.AddMaps<ProjectManagementApplicationModule>(validate: false);
         });
     }
 }

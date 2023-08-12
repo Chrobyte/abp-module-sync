@@ -18,7 +18,7 @@ public class CustomerManagementApplicationModule : AbpModule
         context.Services.AddAutoMapperObjectMapper<CustomerManagementApplicationModule>();
         Configure<AbpAutoMapperOptions>(options =>
         {
-            options.AddMaps<CustomerManagementApplicationModule>(validate: true);
+            options.AddMaps<CustomerManagementApplicationModule>(validate: false);
         });
     }
 }
