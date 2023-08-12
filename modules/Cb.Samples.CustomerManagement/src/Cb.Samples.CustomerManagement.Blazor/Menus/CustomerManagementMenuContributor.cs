@@ -16,7 +16,19 @@ public class CustomerManagementMenuContributor : IMenuContributor
     private Task ConfigureMainMenuAsync(MenuConfigurationContext context)
     {
         //Add main menu items.
-        context.Menu.AddItem(new ApplicationMenuItem(CustomerManagementMenus.Prefix, displayName: "CustomerManagement", "/CustomerManagement", icon: "fa fa-globe"));
+        var menuItem = context.Menu.AddItem(new ApplicationMenuItem(CustomerManagementMenus.Prefix, displayName: "CustomerManagement", "/CustomerManagement", icon: "fa fa-globe"));
+
+        menuItem.AddItem(new(
+            name: CustomerManagementMenus.Customers,
+            displayName: "Customers",
+            url: "~/customers",
+            order: 1));
+
+        menuItem.AddItem(new(
+            name: CustomerManagementMenus.Countries,
+            displayName: "Countries",
+            url: "~/countries",
+            order: 2));
 
         return Task.CompletedTask;
     }

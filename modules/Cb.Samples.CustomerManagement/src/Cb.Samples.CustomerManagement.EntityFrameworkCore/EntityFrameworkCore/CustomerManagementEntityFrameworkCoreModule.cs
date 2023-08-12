@@ -1,4 +1,8 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Cb.Samples.CustomerManagement.Countries;
+using Cb.Samples.CustomerManagement.Customers;
+using Microsoft.Extensions.DependencyInjection;
+using System;
+using Volo.Abp.Domain.Repositories.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore;
 using Volo.Abp.Modularity;
 
@@ -14,9 +18,8 @@ public class CustomerManagementEntityFrameworkCoreModule : AbpModule
     {
         context.Services.AddAbpDbContext<CustomerManagementDbContext>(options =>
         {
-                /* Add custom repositories here. Example:
-                 * options.AddRepository<Question, EfCoreQuestionRepository>();
-                 */
+            options.AddRepository<Country, EfCoreRepository<ICustomerManagementDbContext, Country, Guid>>();
+            options.AddRepository<Customer, EfCoreRepository<ICustomerManagementDbContext, Customer, Guid>>();
         });
     }
 }

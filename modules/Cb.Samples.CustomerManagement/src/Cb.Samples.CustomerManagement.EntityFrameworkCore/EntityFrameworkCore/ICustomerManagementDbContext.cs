@@ -1,4 +1,7 @@
-﻿using Volo.Abp.Data;
+﻿using Cb.Samples.CustomerManagement.Countries;
+using Cb.Samples.CustomerManagement.Customers;
+using Microsoft.EntityFrameworkCore;
+using Volo.Abp.Data;
 using Volo.Abp.EntityFrameworkCore;
 
 namespace Cb.Samples.CustomerManagement.EntityFrameworkCore;
@@ -6,7 +9,6 @@ namespace Cb.Samples.CustomerManagement.EntityFrameworkCore;
 [ConnectionStringName(CustomerManagementDbProperties.ConnectionStringName)]
 public interface ICustomerManagementDbContext : IEfCoreDbContext
 {
-    /* Add DbSet for each Aggregate Root here. Example:
-     * DbSet<Question> Questions { get; }
-     */
+     DbSet<Country> Countries { get; }
+     DbSet<Customer> Customers { get; }
 }

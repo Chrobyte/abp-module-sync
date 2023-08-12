@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29001.49
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34003.232
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cb.Samples.CustomerManagement.Domain.Shared", "src\Cb.Samples.CustomerManagement.Domain.Shared\Cb.Samples.CustomerManagement.Domain.Shared.csproj", "{D64C1577-4929-4B60-939E-96DE1534891A}"
 EndProject
@@ -49,17 +49,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cb.Samples.CustomerManageme
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cb.Samples.CustomerManagement.Web.Unified", "host\Cb.Samples.CustomerManagement.Web.Unified\Cb.Samples.CustomerManagement.Web.Unified.csproj", "{3D872C41-E226-45C8-89C1-9D3DBD7C73F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cb.Samples.CustomerManagement.Blazor", "src\Cb.Samples.CustomerManagement.Blazor\Cb.Samples.CustomerManagement.Blazor.csproj", "{827FCC18-A22B-4175-82CD-1233F6DEE8FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cb.Samples.CustomerManagement.Blazor", "src\Cb.Samples.CustomerManagement.Blazor\Cb.Samples.CustomerManagement.Blazor.csproj", "{827FCC18-A22B-4175-82CD-1233F6DEE8FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cb.Samples.CustomerManagement.Blazor.Host", "host\Cb.Samples.CustomerManagement.Blazor.Host\Cb.Samples.CustomerManagement.Blazor.Host.csproj", "{D7E0F672-F5E2-4338-AFF4-4E5091C55A62}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cb.Samples.CustomerManagement.Blazor.Host", "host\Cb.Samples.CustomerManagement.Blazor.Host\Cb.Samples.CustomerManagement.Blazor.Host.csproj", "{D7E0F672-F5E2-4338-AFF4-4E5091C55A62}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cb.Samples.CustomerManagement.Blazor.Server", "src\Cb.Samples.CustomerManagement.Blazor.Server\Cb.Samples.CustomerManagement.Blazor.Server.csproj", "{299BE52E-823F-408E-9C6D-7E2F81BA34FF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cb.Samples.CustomerManagement.Blazor.Server", "src\Cb.Samples.CustomerManagement.Blazor.Server\Cb.Samples.CustomerManagement.Blazor.Server.csproj", "{299BE52E-823F-408E-9C6D-7E2F81BA34FF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cb.Samples.CustomerManagement.Blazor.WebAssembly", "src\Cb.Samples.CustomerManagement.Blazor.WebAssembly\Cb.Samples.CustomerManagement.Blazor.WebAssembly.csproj", "{F0EE5760-262D-456A-AA7C-E84F484A05F6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cb.Samples.CustomerManagement.Blazor.WebAssembly", "src\Cb.Samples.CustomerManagement.Blazor.WebAssembly\Cb.Samples.CustomerManagement.Blazor.WebAssembly.csproj", "{F0EE5760-262D-456A-AA7C-E84F484A05F6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cb.Samples.CustomerManagement.Blazor.Server.Host", "host\Cb.Samples.CustomerManagement.Blazor.Server.Host\Cb.Samples.CustomerManagement.Blazor.Server.Host.csproj", "{FEA752A1-5B4E-49E9-B1F3-DDC25E41BB52}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cb.Samples.CustomerManagement.Blazor.Server.Host", "host\Cb.Samples.CustomerManagement.Blazor.Server.Host\Cb.Samples.CustomerManagement.Blazor.Server.Host.csproj", "{FEA752A1-5B4E-49E9-B1F3-DDC25E41BB52}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cb.Samples.CustomerManagement.Installer", "src\Cb.Samples.CustomerManagement.Installer\Cb.Samples.CustomerManagement.Installer.csproj", "{BE39FD00-745B-4049-8161-FC129817CBE4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cb.Samples.CustomerManagement.Installer", "src\Cb.Samples.CustomerManagement.Installer\Cb.Samples.CustomerManagement.Installer.csproj", "{BE39FD00-745B-4049-8161-FC129817CBE4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

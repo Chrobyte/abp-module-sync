@@ -1,0 +1,152 @@
+﻿@page "/countries"
+@using Cb.Samples.CustomerManagement.Countries;
+@using Cb.Samples.CustomerManagement.Localization;
+@using Volo.Abp.Application.Dtos;
+@using Volo.Abp.AspNetCore.Components.Web.Theming.Layout
+@using Volo.Abp.AspNetCore.Components.Web.Theming.PageToolbars;
+@using Volo.Abp.BlazoriseUI.Components
+
+@inherits AbpCrudPageBase<
+    ICountryAppService,
+    CountryDto,
+    Guid,
+    PagedAndSortedResultRequestDto,
+    CountryCreateUpdateDto>
+
+@inject AbpBlazorMessageLocalizerHelper<CustomerManagementResource> LH
+
+<Card>
+    <CardHeader>
+        <PageHeader 
+            Title="@L["Countries"]" 
+            Toolbar="@Toolbar"/>
+    </CardHeader>
+    <CardBody>
+        <DataGrid TItem="CountryDto"
+                  Data="Entities"
+                  ReadData="OnDataGridReadAsync"
+                  TotalItems="TotalCount"
+                  ShowPager="true"
+                  PageSize="PageSize"
+                  Responsive="true"
+                  Class="mt-3">
+            <DataGridColumns>
+                <DataGridEntityActionsColumn TItem="CountryDto">
+                    <DisplayTemplate>
+                        <EntityActions TItem="CountryDto">
+                            <EntityAction TItem="CountryDto"
+                                          Clicked="() => OpenEditModalAsync(context)"
+                                          Text="@L["Edit"]">
+                            </EntityAction>
+                            <EntityAction TItem="CountryDto"
+                                          Clicked="() => DeleteEntityAsync(context)"
+                                          ConfirmationMessage="@(()=> L["DeleteConfirmationMessage"])"
+                                          Text="@L["Delete"]">
+                            </EntityAction>
+                        </EntityActions>
+                    </DisplayTemplate>
+                </DataGridEntityActionsColumn>
+
+                <DataGridColumn TItem="CountryDto"
+                                Field="Name"
+                                HeaderTextAlignment="TextAlignment.Center"
+                                TextAlignment="TextAlignment.Center"
+                                Caption="@L["Name"]">
+                </DataGridColumn>
+
+            </DataGridColumns>
+        </DataGrid>
+    </CardBody>
+</Card>
+
+<Modal @ref="CreateModal">
+    <ModalContent Centered="true">
+        <Form id="CreateCountryForm">
+            <ModalHeader>
+                <ModalTitle>@L["NewCountry"]</ModalTitle>
+                <CloseButton Clicked="() => CreateModal.Hide()" />
+            </ModalHeader>
+            <ModalBody>
+                <Validations Mode="ValidationMode.Auto" Model="@CreateModal" ValidateOnLoad="false">
+
+                    <Validation>
+                        <Field>
+                            <FieldLabel>@L["Name"] *</FieldLabel>
+                            <TextEdit TValue="string" @bind-Text="@NewEntity.Name">
+                                <Feedback>
+                                    <ValidationError />
+                                </Feedback>
+                            </TextEdit>
+                        </Field>
+                    </Validation>
+
+                </Validations>
+            </ModalBody>
+            <ModalFooter>
+                <Button Color="Color.Secondary"
+                        Clicked="() => CreateModal.Hide()">
+                    @L["Cancel"]
+                </Button>
+                <Button Type="ButtonType.Submit" PreventDefaultOnSubmit="true" Color="Color.Primary"
+                        Clicked="CreateEntityAsync">
+                    <i class="fa-check fa"></i> @L["Save"]
+                </Button>
+            </ModalFooter>
+        </Form>
+    </ModalContent>
+</Modal>
+
+<Modal @ref="EditModal">
+    <ModalContent Centered="true">
+        <Form id="EditCountryForm">
+            <ModalHeader>
+                <ModalTitle>@L["Update"]</ModalTitle>
+                <CloseButton Clicked="() => EditModal.Hide()" />
+            </ModalHeader>
+            <ModalBody>
+                <Validations Mode="ValidationMode.Auto" Model="@EditModal" ValidateOnLoad="false">
+                    <Validation>
+                        <Field>
+                            <FieldLabel>@L["Name"] *</FieldLabel>
+                            <TextEdit TValue="string" @bind-Text="@EditingEntity.Name">
+                                <Feedback>
+                                    <ValidationError />
+                                </Feedback>
+                            </TextEdit>
+                        </Field>
+                    </Validation>
+
+                </Validations>
+            </ModalBody>
+            <ModalFooter>
+                <Button Color="Color.Secondary"
+                        Clicked="() => EditModal.Hide()">
+                    @L["Cancel"]
+                </Button>
+                <Button Type="ButtonType.Submit" PreventDefaultOnSubmit="true" Color="Color.Primary"
+                        Clicked="UpdateEntityAsync">
+                    <i class="fa-check fa"></i> @L["Save"]
+                </Button>
+            </ModalFooter>
+        </Form>
+    </ModalContent>
+</Modal>
+
+@code {
+    protected PageToolbar Toolbar { get; } = new();
+
+    public Countries()
+    {
+        LocalizationResource = typeof(CustomerManagementResource);
+    }
+
+    protected override ValueTask SetToolbarItemsAsync()
+    {
+        Toolbar.AddButton(L["NewCountry"],
+            OpenCreateModalAsync,
+            IconName.Add,
+            requiredPolicyName: CreatePolicyName);
+
+        return base.SetToolbarItemsAsync();
+    }
+}
