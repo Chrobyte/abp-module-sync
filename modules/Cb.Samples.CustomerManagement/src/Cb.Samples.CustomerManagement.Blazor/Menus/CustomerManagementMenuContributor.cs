@@ -21,13 +21,13 @@ public class CustomerManagementMenuContributor : IMenuContributor
         menuItem.AddItem(new(
             name: CustomerManagementMenus.Customers,
             displayName: "Customers",
-            url: "~/customers",
+            url: "~/sample-cm/customers",
             order: 1));
 
         menuItem.AddItem(new(
             name: CustomerManagementMenus.Countries,
             displayName: "Countries",
-            url: "~/countries",
+            url: "~/sample-cm/countries",
             order: 2));
 
         return Task.CompletedTask;

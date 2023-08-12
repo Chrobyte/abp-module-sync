@@ -21,13 +21,13 @@ public class ProjectManagementMenuContributor : IMenuContributor
         menuItem.AddItem(new(
             name: ProjectManagementMenus.Projects,
             displayName: "Projects",
-            url: "~/projects",
+            url: "~/sample-pm/projects",
             order: 1));
 
         menuItem.AddItem(new(
             name: ProjectManagementMenus.Customers,
             displayName: "Customers",
-            url: "~/customers",
+            url: "~/sample-pm/customers",
             order: 2));
 
         return Task.CompletedTask;

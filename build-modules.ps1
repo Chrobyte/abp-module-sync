@@ -9,7 +9,7 @@ foreach ($moduleFolder in $moduleFolders) {
     $solutionPath = Join-Path -Path $moduleFolder.FullName -ChildPath "$($moduleFolder.Name).sln";
 
     Write-Host "Building solution: $solutionPath";
-    dotnet build $solutionPath;
+    dotnet build $solutionPath -v q;
 
     $nupkgFiles = Get-ChildItem -Path $moduleFolder.FullName -Recurse -File -Filter "*.nupkg";
 

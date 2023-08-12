@@ -21,7 +21,7 @@ public class CustomerManagementBlazorModule : AbpModule
 
         Configure<AbpAutoMapperOptions>(options =>
         {
-            options.AddProfile<CustomerManagementBlazorAutoMapperProfile>(validate: true);
+            options.AddProfile<CustomerManagementBlazorAutoMapperProfile>(validate: false);
         });
 
         Configure<AbpNavigationOptions>(options =>
