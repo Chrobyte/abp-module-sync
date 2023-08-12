@@ -260,3 +260,4 @@ host/Cb.Samples.ProjectManagement.Blazor.Server.Host/Logs/logs.txt
 
 # Use abp install-libs to restore.
 **/wwwroot/libs/*
+/apps/src/Cb.Samples.ModulesEntitySync.Blazor/Logs/logs.txt

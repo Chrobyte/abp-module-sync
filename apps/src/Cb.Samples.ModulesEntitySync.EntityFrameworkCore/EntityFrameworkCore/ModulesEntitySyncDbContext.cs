@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Cb.Samples.CustomerManagement.EntityFrameworkCore;
+using Cb.Samples.ProjectManagement.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Volo.Abp.AuditLogging.EntityFrameworkCore;
 using Volo.Abp.BackgroundJobs.EntityFrameworkCore;
 using Volo.Abp.Data;
@@ -73,6 +75,10 @@ public class ModulesEntitySyncDbContext :
         builder.ConfigureOpenIddict();
         builder.ConfigureFeatureManagement();
         builder.ConfigureTenantManagement();
+
+        // OUR MODULES
+        builder.ConfigureCustomerManagement();
+        builder.ConfigureProjectManagement();
 
         /* Configure your own tables/entities inside here */
 

@@ -10,6 +10,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Cb.Samples.ModulesEntitySync.Domain\Cb.Samples.ModulesEntitySync.Domain.csproj" />
+    <PackageReference Include="Cb.Samples.CustomerManagement.EntityFrameworkCore" Version="$(DemoModuleVersion)" />
+    <PackageReference Include="Cb.Samples.ProjectManagement.EntityFrameworkCore" Version="$(DemoModuleVersion)" />
     <PackageReference Include="Volo.Abp.EntityFrameworkCore.SqlServer" Version="7.3.2" />
     <PackageReference Include="Volo.Abp.PermissionManagement.EntityFrameworkCore" Version="7.3.2" />
     <PackageReference Include="Volo.Abp.SettingManagement.EntityFrameworkCore" Version="7.3.2" />

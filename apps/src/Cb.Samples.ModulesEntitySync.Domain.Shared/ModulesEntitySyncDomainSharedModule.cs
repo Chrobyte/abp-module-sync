@@ -25,6 +25,10 @@ namespace Cb.Samples.ModulesEntitySync;
     typeof(AbpSettingManagementDomainSharedModule),
     typeof(AbpTenantManagementDomainSharedModule)    
     )]
+[DependsOn(
+    typeof(CustomerManagement.CustomerManagementDomainSharedModule),
+    typeof(ProjectManagement.ProjectManagementDomainSharedModule)
+)]
 public class ModulesEntitySyncDomainSharedModule : AbpModule
 {
     public override void PreConfigureServices(ServiceConfigurationContext context)

@@ -12,6 +12,8 @@ using Volo.Abp.OpenIddict.EntityFrameworkCore;
 using Volo.Abp.PermissionManagement.EntityFrameworkCore;
 using Volo.Abp.SettingManagement.EntityFrameworkCore;
 using Volo.Abp.TenantManagement.EntityFrameworkCore;
+using Cb.Samples.CustomerManagement.EntityFrameworkCore;
+using Cb.Samples.ProjectManagement.EntityFrameworkCore;
 
 namespace Cb.Samples.ModulesEntitySync.EntityFrameworkCore;
 
@@ -27,6 +29,10 @@ namespace Cb.Samples.ModulesEntitySync.EntityFrameworkCore;
     typeof(AbpTenantManagementEntityFrameworkCoreModule),
     typeof(AbpFeatureManagementEntityFrameworkCoreModule)
     )]
+[DependsOn(
+    typeof(CustomerManagementEntityFrameworkCoreModule),
+    typeof(ProjectManagementEntityFrameworkCoreModule)
+)]
 public class ModulesEntitySyncEntityFrameworkCoreModule : AbpModule
 {
     public override void PreConfigureServices(ServiceConfigurationContext context)

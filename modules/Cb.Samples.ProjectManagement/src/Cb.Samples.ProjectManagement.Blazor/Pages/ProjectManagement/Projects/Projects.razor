@@ -1,0 +1,188 @@
+﻿@page "/sample-pm/projects"
+@using Cb.Samples.ProjectManagement.Customers;
+@using Cb.Samples.ProjectManagement.Localization;
+@using Cb.Samples.ProjectManagement.Projects;
+@using Volo.Abp.Application.Dtos;
+@using Volo.Abp.AspNetCore.Components.Web.Theming.Layout
+@using Volo.Abp.AspNetCore.Components.Web.Theming.PageToolbars;
+@using Volo.Abp.BlazoriseUI.Components
+
+@inherits AbpCrudPageBase<
+    IProjectAppService,
+    ProjectDto,
+    Guid,
+    PagedAndSortedResultRequestDto,
+    ProjectCreateUpdateDto>
+
+@inject AbpBlazorMessageLocalizerHelper<ProjectManagementResource> LH
+
+<Card>
+    <CardHeader>
+        <PageHeader 
+            Title="@L["Projects"]" 
+            Toolbar="@Toolbar"/>
+    </CardHeader>
+    <CardBody>
+        <DataGrid TItem="ProjectDto"
+                  Data="Entities"
+                  ReadData="OnDataGridReadAsync"
+                  TotalItems="TotalCount"
+                  ShowPager="true"
+                  PageSize="PageSize"
+                  Responsive="true"
+                  Class="mt-3">
+            <DataGridColumns>
+                <DataGridEntityActionsColumn TItem="ProjectDto">
+                    <DisplayTemplate>
+                        <EntityActions TItem="ProjectDto">
+                            <EntityAction TItem="ProjectDto"
+                                          Clicked="() => OpenEditModalAsync(context)"
+                                          Text="@L["Edit"]">
+                            </EntityAction>
+                            <EntityAction TItem="ProjectDto"
+                                          Clicked="() => DeleteEntityAsync(context)"
+                                          ConfirmationMessage="@(()=> L["DeleteConfirmationMessage"])"
+                                          Text="@L["Delete"]">
+                            </EntityAction>
+                        </EntityActions>
+                    </DisplayTemplate>
+                </DataGridEntityActionsColumn>
+
+                <DataGridColumn TItem="ProjectDto"
+                                Field="Name"
+                                HeaderTextAlignment="TextAlignment.Center"
+                                TextAlignment="TextAlignment.Center"
+                                Caption="@L["Name"]">
+                </DataGridColumn>
+                <DataGridColumn TItem="ProjectDto"
+                                Field="CustomerName"
+                                HeaderTextAlignment="TextAlignment.Center"
+                                TextAlignment="TextAlignment.Center"
+                                Caption="@L["Customer"]">
+                </DataGridColumn>
+
+            </DataGridColumns>
+        </DataGrid>
+    </CardBody>
+</Card>
+
+<Modal @ref="CreateModal">
+    <ModalContent Centered="true">
+        <Form id="CreateCountryForm">
+            <ModalHeader>
+                <ModalTitle>@L["Newproject"]</ModalTitle>
+                <CloseButton Clicked="() => CreateModal.Hide()" />
+            </ModalHeader>
+            <ModalBody>
+                <Validations Mode="ValidationMode.Auto" Model="@CreateModal" ValidateOnLoad="false">
+
+                    <Validation>
+                        <Field>
+                            <FieldLabel>@L["Name"] *</FieldLabel>
+                            <TextEdit TValue="string" @bind-Text="@NewEntity.Name">
+                                <Feedback>
+                                    <ValidationError />
+                                </Feedback>
+                            </TextEdit>
+                        </Field>
+                    </Validation>
+                    <Field>
+                        <FieldLabel>@L["Customer"]</FieldLabel>
+                        <Select TValue="Guid" @bind-SelectedValue="@NewEntity.CustomerId">
+                            <SelectItem TValue="Guid?" Value="null">@L["Choose"]</SelectItem>
+                            @foreach (var item in Customers)
+                            {
+                                <SelectItem TValue="Guid" Value="@item.Id">@item.Name</SelectItem>
+                            }
+                        </Select>
+                    </Field>
+                </Validations>
+            </ModalBody>
+            <ModalFooter>
+                <Button Color="Color.Secondary"
+                        Clicked="() => CreateModal.Hide()">
+                    @L["Cancel"]
+                </Button>
+                <Button Type="ButtonType.Submit" PreventDefaultOnSubmit="true" Color="Color.Primary"
+                        Clicked="CreateEntityAsync">
+                    <i class="fa-check fa"></i> @L["Save"]
+                </Button>
+            </ModalFooter>
+        </Form>
+    </ModalContent>
+</Modal>
+
+<Modal @ref="EditModal">
+    <ModalContent Centered="true">
+        <Form id="EditCountryForm">
+            <ModalHeader>
+                <ModalTitle>@L["Update"]</ModalTitle>
+                <CloseButton Clicked="() => EditModal.Hide()" />
+            </ModalHeader>
+            <ModalBody>
+                <Validations Mode="ValidationMode.Auto" Model="@EditModal" ValidateOnLoad="false">
+                    <Validation>
+                        <Field>
+                            <FieldLabel>@L["Name"] *</FieldLabel>
+                            <TextEdit TValue="string" @bind-Text="@EditingEntity.Name">
+                                <Feedback>
+                                    <ValidationError />
+                                </Feedback>
+                            </TextEdit>
+                        </Field>
+                    </Validation>
+                    <Field>
+                        <FieldLabel>@L["Customer"]</FieldLabel>
+                        <Select TValue="Guid" @bind-SelectedValue="@EditingEntity.CustomerId">
+                            <SelectItem TValue="Guid?" Value="null">@L["Choose"]</SelectItem>
+                            @foreach (var item in Customers)
+                            {
+                                <SelectItem TValue="Guid" Value="@item.Id">@item.Name</SelectItem>
+                            }
+                        </Select>
+                    </Field>
+                </Validations>
+            </ModalBody>
+            <ModalFooter>
+                <Button Color="Color.Secondary"
+                        Clicked="() => EditModal.Hide()">
+                    @L["Cancel"]
+                </Button>
+                <Button Type="ButtonType.Submit" PreventDefaultOnSubmit="true" Color="Color.Primary"
+                        Clicked="UpdateEntityAsync">
+                    <i class="fa-check fa"></i> @L["Save"]
+                </Button>
+            </ModalFooter>
+        </Form>
+    </ModalContent>
+</Modal>
+
+@code {
+
+    protected PageToolbar Toolbar { get; } = new();
+
+    protected IReadOnlyList<CustomerDto> Customers { get; private set; } = new List<CustomerDto>();
+
+    public Projects()
+    {
+        LocalizationResource = typeof(ProjectManagementResource);
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+
+        var customers = await AppService.GetCustomerLookupAsync();
+        Customers = customers.Items;
+    }
+
+    protected override ValueTask SetToolbarItemsAsync()
+    {
+        Toolbar.AddButton(L["NewProject"],
+            OpenCreateModalAsync,
+            IconName.Add,
+            requiredPolicyName: CreatePolicyName);
+
+        return base.SetToolbarItemsAsync();
+    }
+}

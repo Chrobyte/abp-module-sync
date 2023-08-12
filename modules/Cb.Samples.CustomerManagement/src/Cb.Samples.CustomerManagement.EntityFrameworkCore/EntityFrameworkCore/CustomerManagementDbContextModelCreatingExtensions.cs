@@ -1,5 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Cb.Samples.CustomerManagement.Countries;
+using Cb.Samples.CustomerManagement.Customers;
+using Microsoft.EntityFrameworkCore;
 using Volo.Abp;
+using Volo.Abp.EntityFrameworkCore.Modeling;
 
 namespace Cb.Samples.CustomerManagement.EntityFrameworkCore;
 
@@ -10,24 +13,24 @@ public static class CustomerManagementDbContextModelCreatingExtensions
     {
         Check.NotNull(builder, nameof(builder));
 
-        /* Configure all entities here. Example:
-
-        builder.Entity<Question>(b =>
+        builder.Entity<Country>(b =>
         {
-            //Configure table & schema name
-            b.ToTable(CustomerManagementDbProperties.DbTablePrefix + "Questions", CustomerManagementDbProperties.DbSchema);
+            b.ToTable(CustomerManagementDbProperties.DbTablePrefix + "Countries", CustomerManagementDbProperties.DbSchema);
+
+            b.ConfigureByConvention();
+        });
+
+        builder.Entity<Customer>(b =>
+        {
+            b.ToTable(CustomerManagementDbProperties.DbTablePrefix + "Customers", CustomerManagementDbProperties.DbSchema);
 
             b.ConfigureByConvention();
 
-            //Properties
-            b.Property(q => q.Title).IsRequired().HasMaxLength(QuestionConsts.MaxTitleLength);
-
-            //Relations
-            b.HasMany(question => question.Tags).WithOne().HasForeignKey(qt => qt.QuestionId);
-
-            //Indexes
-            b.HasIndex(q => q.CreationTime);
+            b.HasOne<Country>()
+                .WithMany()
+                .HasForeignKey(p => p.CountryId)
+                .IsRequired(false)
+                .OnDelete(DeleteBehavior.Restrict);
         });
-        */
     }
 }

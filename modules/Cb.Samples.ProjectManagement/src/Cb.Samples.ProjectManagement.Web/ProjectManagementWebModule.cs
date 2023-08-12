@@ -47,7 +47,7 @@ public class ProjectManagementWebModule : AbpModule
         context.Services.AddAutoMapperObjectMapper<ProjectManagementWebModule>();
         Configure<AbpAutoMapperOptions>(options =>
         {
-            options.AddMaps<ProjectManagementWebModule>(validate: true);
+            options.AddMaps<ProjectManagementWebModule>(validate: false);
         });
 
         Configure<RazorPagesOptions>(options =>

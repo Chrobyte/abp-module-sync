@@ -16,4 +16,16 @@ abp new Cb.Samples.CustomerManagement -t module -csf
 ```sh
 abp new Cb.Samples.ModulesEntitySync8 -t app -u blazor-server -dbms SqlServer
 ```
-> As this is just a sample we have decided to only implement for blazor ui and ef core
+
+# Please note
+As this is just a sample we have decided to only implement for blazor ui and ef core.
+
+We ignored A LOT of best practice for the sake of simplicity.
+
+# Setup
+
+Use the `build-modules.ps1` script. That will build all modules and move the resulting nuget packages into the `packages` directory (will be created if not exists).
+
+This directory is used as a local nuget source for our app project. 
+
+We could have just used references, but that would not emphasize that modules are something that we normally have no access to.

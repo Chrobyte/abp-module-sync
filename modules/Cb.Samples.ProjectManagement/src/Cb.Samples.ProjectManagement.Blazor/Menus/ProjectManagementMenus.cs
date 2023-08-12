@@ -5,6 +5,8 @@ public class ProjectManagementMenus
     public const string Prefix = "ProjectManagement";
 
     //Add your menu items here...
-    //public const string Home = Prefix + ".MyNewMenuItem";
+    
+    public const string Customers = Prefix + ".Customers";
+    public const string Projects = Prefix + ".Projects";
 
 }

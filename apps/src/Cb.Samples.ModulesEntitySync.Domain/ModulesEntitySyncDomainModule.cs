@@ -30,6 +30,10 @@ namespace Cb.Samples.ModulesEntitySync;
     typeof(AbpTenantManagementDomainModule),
     typeof(AbpEmailingModule)
 )]
+[DependsOn(
+    typeof(CustomerManagement.CustomerManagementDomainModule),
+    typeof(ProjectManagement.ProjectManagementDomainModule)
+)]
 public class ModulesEntitySyncDomainModule : AbpModule
 {
     public override void ConfigureServices(ServiceConfigurationContext context)

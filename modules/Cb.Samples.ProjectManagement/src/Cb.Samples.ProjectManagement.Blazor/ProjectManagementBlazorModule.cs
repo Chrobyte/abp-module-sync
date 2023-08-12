@@ -21,7 +21,7 @@ public class ProjectManagementBlazorModule : AbpModule
 
         Configure<AbpAutoMapperOptions>(options =>
         {
-            options.AddProfile<ProjectManagementBlazorAutoMapperProfile>(validate: true);
+            options.AddProfile<ProjectManagementBlazorAutoMapperProfile>(validate: false);
         });
 
         Configure<AbpNavigationOptions>(options =>

@@ -20,6 +20,10 @@ namespace Cb.Samples.ModulesEntitySync;
     typeof(AbpFeatureManagementHttpApiModule),
     typeof(AbpSettingManagementHttpApiModule)
     )]
+[DependsOn(
+    typeof(CustomerManagement.CustomerManagementHttpApiModule),
+    typeof(ProjectManagement.ProjectManagementHttpApiModule)
+)]
 public class ModulesEntitySyncHttpApiModule : AbpModule
 {
     public override void ConfigureServices(ServiceConfigurationContext context)

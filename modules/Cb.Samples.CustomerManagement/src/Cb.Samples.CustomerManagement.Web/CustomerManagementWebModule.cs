@@ -1,14 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.Extensions.DependencyInjection;
-using Cb.Samples.CustomerManagement.Localization;
+﻿using Cb.Samples.CustomerManagement.Localization;
 using Cb.Samples.CustomerManagement.Web.Menus;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.Extensions.DependencyInjection;
 using Volo.Abp.AspNetCore.Mvc.Localization;
 using Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared;
 using Volo.Abp.AutoMapper;
 using Volo.Abp.Modularity;
 using Volo.Abp.UI.Navigation;
 using Volo.Abp.VirtualFileSystem;
-using Cb.Samples.CustomerManagement.Permissions;
 
 namespace Cb.Samples.CustomerManagement.Web;
 
@@ -47,12 +46,12 @@ public class CustomerManagementWebModule : AbpModule
         context.Services.AddAutoMapperObjectMapper<CustomerManagementWebModule>();
         Configure<AbpAutoMapperOptions>(options =>
         {
-            options.AddMaps<CustomerManagementWebModule>(validate: true);
+            options.AddMaps<CustomerManagementWebModule>(validate: false);
         });
 
         Configure<RazorPagesOptions>(options =>
         {
-                //Configure authorization.
-            });
+            //Configure authorization.
+        });
     }
 }

@@ -4,8 +4,8 @@ using Volo.Abp.FeatureManagement;
 using Volo.Abp.Identity;
 using Volo.Abp.Modularity;
 using Volo.Abp.PermissionManagement;
-using Volo.Abp.TenantManagement;
 using Volo.Abp.SettingManagement;
+using Volo.Abp.TenantManagement;
 using Volo.Abp.VirtualFileSystem;
 
 namespace Cb.Samples.ModulesEntitySync;
@@ -18,6 +18,10 @@ namespace Cb.Samples.ModulesEntitySync;
     typeof(AbpTenantManagementHttpApiClientModule),
     typeof(AbpFeatureManagementHttpApiClientModule),
     typeof(AbpSettingManagementHttpApiClientModule)
+)]
+[DependsOn(
+    typeof(CustomerManagement.CustomerManagementHttpApiClientModule),
+    typeof(ProjectManagement.ProjectManagementHttpApiClientModule)
 )]
 public class ModulesEntitySyncHttpApiClientModule : AbpModule
 {
