@@ -4,6 +4,7 @@ using Cb.Samples.ModulesEntitySync.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Volo.Abp.EntityFrameworkCore;
 
@@ -12,9 +13,11 @@ using Volo.Abp.EntityFrameworkCore;
 namespace Cb.Samples.ModulesEntitySync.Migrations
 {
     [DbContext(typeof(ModulesEntitySyncDbContext))]
-    partial class ModulesEntitySyncDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230812103737_AddModules")]
+    partial class AddModules
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
