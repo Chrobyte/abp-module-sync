@@ -4,6 +4,13 @@
     <Version>0.1.0</Version>
     <NoWarn>$(NoWarn);CS1591</NoWarn>
     <AbpProjectType>module</AbpProjectType>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Chrobyte</Authors>
+    <Description>JUST A DEMO</Description>
+    <PackageProjectUrl>https://github.com/Chrobyte/abp-module-sync</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Chrobyte/abp-module-sync</RepositoryUrl>
+    <PackageTags>abp module chrobyte demo</PackageTags>
+    <Company>Chrobyte</Company>
   </PropertyGroup>
   
   <ItemGroup>
